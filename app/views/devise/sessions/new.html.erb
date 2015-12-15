@@ -1,7 +1,50 @@
-<h2>Log in</h2>
+<div class = "logomark">
+  <h2>~ E n o t i n g ~</h2>
+  <!-- <img src="image/logo.png" alt="Enoting ロゴ" width="140" height="100"> -->
+  <!-- ロゴ思案中 -->
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<div class="login-form">
+  <div class = "signin">
+    <h3>sign in</h3>
+  </div>
+
+<!-- <h2>Log in</h2> -->
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class = "signin-form">
+      <div class = "mailaddress-form">
+        <%= f.label :email, class:"label_form" %><br />
+        <%= f.email_field :email, autofocus: true, id: "mail_address", class: "text_form" %>
+      </div>
+      <div class = "password-form">
+        <%= f.label :password, class:"label_form" %><br />
+        <%= f.password_field :password, autocomplete: "off", id: "password", class: "text_form" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="rememberme-form">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, "パスワードを記憶", class:"text_remember" %>
+        </div>
+      <% end -%>
+      
+      <div class="forgetpassword-form">
+        <%= render "devise/shared/links" %>
+      </div>
+
+      <div class = "login-btn">
+        <%= f.submit "ログイン" ,id:"login-btn", class:"submit-btn"%>
+      </div>
+    </div>
+</div>
+
+  <div id="footer">
+    <p><small>
+      Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+  </div>
+
+<!--   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -22,5 +65,5 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+ -->
 
-<%= render "devise/shared/links" %>

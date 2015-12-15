@@ -15,7 +15,7 @@ development:
   database: Enoting_development
   pool: 5
   username: root
-  password: ' '
+  password: 'a'
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,14 +28,14 @@ test:
   database: Enoting_test
   pool: 5
   username: root
-  password: ' '
+  password: 'a'
   host: localhost
 
 production:
   encoding: utf8  
   adapter: postgresql  
   port: 5432  
-  username: username  
+  username: a
   host: your_host
   database: your_database
   password: your_password

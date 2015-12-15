@@ -1,0 +1,572 @@
+
+body{
+	width: 100%;
+}
+
+/* index.html */
+
+/* メインフォーム */
+.home-head{
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 0 52px 0;
+	/*background-image: url(<%= asset_path "achive01.png" %>);*/
+}
+
+/* サイトネーム ログイン前 */
+.logo{
+	z-index: 1;
+	font-size: 18px;
+	color: #fff;
+	padding: 1px 10% 0;
+	opacity: 0.8;
+}
+
+/* キャッチフレーズ的なもののcss */
+.achivement{
+	color: #fff;
+}
+
+.achivement .l1{
+	margin-top: 50px;	
+	font-size: 22px;
+	margin-bottom: 5px;
+	text-align: center;
+	padding-right: 120px;
+}
+
+.achivement .l2{
+	font-size: 18px;
+	margin-top: 15px;
+	padding-left: 60px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+/* ここまで */
+
+/* 登録ボタン,ログインボタン */
+.form-statement:last-child{
+	margin-bottom: 40px;
+}
+
+.form-statement	 a{
+	display: block;
+	color: #454545;
+	border: solid 1px #ccc;
+	border-radius: 4px;
+	background-color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+	margin: 24px auto;
+	padding: 24px 80px;
+	width: 12%;
+	text-align: center;
+	transition: 0.3s;
+}
+
+.form-statement a:hover{
+	background-color: #d3d3d3;
+	border: solid 1px #d3d3d3;
+}
+
+
+/* index.html 第2section */
+.adv-point{
+	margin-top: 70px;
+}
+
+.adv-point .what-purpose{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.adv-point h2{
+	display: inline;
+	font-size: 18px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #000;
+}
+
+/* 編集point */
+.adv-point .edit{
+	overflow: hidden;
+	margin-left: -7px;
+	margin-bottom: -164px;
+}
+
+.adv-point .edit h3{
+	position: relative;
+	top: -290px;
+	left: 55%;
+	color: #696969;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+.adv-point .edit p{
+	margin-top: 10px;
+	display: block;
+	position: relative;
+	top: -300px;
+	left: 55%;
+	color: #696969;
+	font-size: 16px;
+	line-height: 1.6;
+}
+/* 編集point ここまで */
+
+/* 閲覧point */
+.adv-point .view{
+	overflow: hidden;
+	margin-left: -7px;
+	margin-bottom: -188px;
+}
+
+.adv-point .view h3{
+	position: relative;
+	top: -290px;
+	left: 55%;
+	color: #fff;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+.adv-point .view p{
+	display: block;
+	position: relative;
+	top: -300px;
+	left: 55%;
+	color: #fff;
+	margin-top: 10px;
+	font-size: 16px;
+	line-height: 1.6;
+}
+/* 閲覧point ここまで*/
+
+/* 共有point */
+.adv-point .share{
+	overflow: hidden;
+	margin-left: -7px;
+	margin-bottom: -164px;
+}
+
+.adv-point .share h3{
+	position: relative;
+	top: -290px;
+	left: 55%;
+	color: #fff;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+.adv-point .share p{
+	display: block;
+	position: relative;
+	top: -300px;
+	left: 55%;
+	color: #fff;
+	margin-top: 10px;
+	font-size: 16px;
+	line-height: 1.6;
+}
+/* 共有point ここまで */
+
+
+/* login.html */
+
+/* ヘッダー */
+.logomark{
+	font-size: 18px;
+	padding: 1px 10% 0;
+}
+
+
+
+/* ログイン枠 */
+.login-form{
+	background: #f5f5f5;
+	width: 320px;
+	padding: 10px 50px 60px;
+	margin: 0 auto 0;
+}
+
+/* sign in */
+.login-form .signin{
+	text-align: center;
+	font-size: 16px;
+	color: #3b3b3b;
+}
+
+/* addressフォーム */
+.login-form .mailaddress-form{
+	font-family: sans-serif;
+	font-size: 14px;
+	width: 320px;
+	margin: 0 auto 0;
+}
+
+/* passwordフォーム */
+.login-form .password-form{
+	font-family: sans-serif;
+	font-size: 14px;
+	width: 320px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* address password枠内編集 */
+.login-form .text_form{
+	line-height: 2.0;
+	width: 320px;
+	border: 1px solid #cacaca;
+	border-radius: 2px;
+	font-size: 18px;
+	color: #3b3b3b;
+}
+
+/* mailaddress, passwordformのタイトル編集 */
+.login-form .label_form{
+	/*display: block;*/
+	line-height: 1.4;
+	color: #3b3b3b;
+	font-family: sans-serif;
+	margin-bottom: 5px;
+}
+
+/* パスワードを記憶するチェックボックス周り編集 */
+.rememberme-form{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.rememberme-form .text_remember{
+	display: inline-block;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+/* パスワードを忘れた際のurl編集*/
+.forgetpassword-form{
+	margin-top: 10px;
+	font-size: 11px;
+	text-align: center;
+}
+
+.forget-password{
+	text-decoration: none;
+}
+
+.forget-password:hover{
+	text-decoration: underline;
+	color: #666;
+	background-color: #fff;
+}
+
+/* ログインボタン編集 */
+.login-form .login-btn{
+	text-align: center;
+	margin-top: 34px;
+}
+
+.submit-btn{
+	padding: 10px 20px;
+	width: 320px;
+	border: 1px solid #cacaca;
+	line-height: 2.4;
+	border-radius: 2px;
+	background: #ffa500;
+	color: #fff;
+	font-size: 14px;
+}
+
+.submit-btn:hover{
+	background: #ff8c00;
+	color: #fff;
+	transition: 0.2s linear;
+}
+
+/* note.html */
+
+/* ノートリストの表 */
+.noteList{
+	width: 960px;
+	margin-top: 30px;
+	margin-left: 40px;
+	/*table-layout: fixed;*/
+	border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-left: 1px solid #ccc;
+}
+
+/* ノートリストの見出し */
+.noteList > thead > tr > th{
+    font-size: 15px;
+	padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 2px solid #c00;
+    background: #dcdcd1;
+}
+
+.noteList > thead > tr > .button-rows{
+	border-right: none;
+}
+
+.noteList > thead > tr > .button-rows:last-child{
+	border-right: 1px solid #ccc;
+}
+
+/* ノート一つ一つの要素 */
+.noteList > tbody > tr > .noteRows{
+	font-size: 12px;
+	/*width: 260px;*/
+    padding: 10px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.noteList > tbody > tr > .noteRows-title{
+	font-size: 13px;
+}
+
+.noteList > tbody > tr > .button-rows{
+	width: 40px;
+	text-align: center;
+	color: #000;
+}
+
+/* 閲覧編集削除のボタン */
+.noteList > tbody > tr > .button-rows > a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.noteList > tbody > tr > .button-rows > a:hover{
+	background-color: #dcdcdc;
+}
+
+/* note.html.erb ここまで */
+
+.create-newnote{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	text-align: center;
+	overflow: hidden;
+	/*width: 980px;*/
+}
+
+
+.create-newnote .create-btn{
+	display: inline-block;
+	/*border: solid 1px #ccc;*/
+	/*padding: 5px 10px 5px;*/
+}
+
+.create-newnote .search-box{
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	line-height: 1.5;
+	-webkit-appearance : none;
+	margin-left: 20px;
+	vertical-align: 2px;
+}
+
+.main-column{
+	overflow: hidden;
+	margin-top: 40px;
+}
+
+.main-column .side-bar{
+	float: left;
+	width: 220px;
+	margin-left: 10px;
+	margin-right: 40px;
+}
+
+.main-column .side-bar ul li{
+	list-style-type: none;
+	height: 50px;
+	width: 180px;
+	text-indent: 20px;
+	border: 1px solid #ccc;
+	line-height: 50px;
+	background-color: #15B59B;
+	font-size: 14px;
+	transition: 0.4s linear;
+}
+
+.main-column .side-bar ul li a{
+	display: block;
+	text-decoration: none;
+	color: #fff;
+}
+
+.main-column .side-bar ul li:hover{
+	background-color: #00a7cf;
+}
+
+.main-column .main-position .notelist-column{
+	overflow: hidden;
+}
+/*
+.main-column .main-position .note-list{
+	margin-top: 12px;
+	float: left;
+	width: 700px;
+	height: 100%;
+}*/
+
+.main-position{
+	margin-top: 12px;
+	width: 1180px;
+	height: 100%;
+}
+
+.notelist-table{
+	overflow: hidden;
+}
+
+.notelist-table > div{
+	float: left;
+	margin-left: 20px;
+}
+
+.notelist-table > div:first-child{
+	margin-left: 0;
+}
+
+.notelist-table h2{
+	font-size: 14px;
+}
+
+
+.textarea{
+	/*margin-top: -32px;*/
+	/*margin-right: -30px;*/
+	/*float: left;*/
+	width: 380px;
+	border: 1px solid #ccc;
+	padding: 30px 40px 30px;
+}
+
+/* noteBook.html */
+
+.noteBook-box h2{
+	font-size: 14px;
+}
+
+/* edit.html */
+
+.subcolumn-bar{
+}
+
+.subcolumn-bar ul{
+	overflow: hidden;
+	/*width: 730px;*/
+}
+
+.subcolumn-bar li{
+	list-style-type: none;
+	float: left;
+	height: 50px;
+	width: 150px;
+	/*text-indent: 10px;*/
+	text-align: center;
+	/*border: 1px solid #15B59B;*/
+	line-height: 50px;
+	border-bottom: 3px solid #15859B;
+	/*background-color: #15B59B;*/
+	font-size: 13px;
+	transition: 0.5s linear;
+	/*margin: 0 2px 0;*/
+}
+
+.subcolumn-bar li a{
+	display: block;
+	text-decoration: none;
+	color: #000;
+	transition: 0.3s linear;
+}
+
+.subcolumn-bar li a:hover{
+	background-color: #dcdcdc;
+	border-bottom: 4px solid #15859B;
+}
+
+
+#result{
+	float: left;
+	width: 480px;
+	font-size: 14px;
+	margin-left: 50px;
+	margin-top: -10px;
+}
+
+/* edit.html ここまで */
+
+
+/* Enoting サブカラム */
+.head-list-column{
+	overflow: hidden;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.head-list-column > .logomark-a{
+	font-size: 18px;
+	margin-left: 50px;
+	width: 260px;
+	float: left;
+}
+
+.head-list-column > .subcolumn-bar{
+	margin-left: 60px;
+	width: 850px;
+	float: left;
+}
+/* Enoting サブカラム ここまで */
+
+
+
+/* form.html.erb すなわち edit.html.erb 編集 */
+.edit-name-form{
+	margin-left: 40px;
+	margin-bottom: 10px;
+}
+
+.edit-text-form{
+	float: left;
+	margin-bottom: 20px;
+}
+
+.edit-note-title{
+	font-size: 13px;	
+	width: 320px;
+	height: 35px;
+	padding-left: 5px;
+}
+
+.edit-note-text{
+	width: 540px;
+	float: left;
+	font-size: 15px;
+	margin-left: 40px;
+	padding: 30px 30px 20px;
+	/*max-height: 1200px;*/
+}
+
+.update-note-button{
+	margin-left: 40px;	
+}
+
+/* フッター */
+#footer{
+	margin-top: 40px;
+	text-align: center;
+	font-size: 13px;
+}

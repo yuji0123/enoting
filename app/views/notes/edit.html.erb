@@ -1,6 +1,43 @@
-<h1>Editing Note</h1>
+	<%= javascript_include_tag "marked", "data-turbolinks-track" => true %>
+  	<div class = "head-list-column">
+	    <div class = "logomark-a">
+	      <h2>~ E n o t i n g ~</h2>
+	      <!-- <img src="image/logo.png" alt="Enoting ロゴ" width="140" height="100"> -->
+	      <!-- ロゴ思案中 -->
+	    </div>
 
-<%= render 'form' %>
+	    <div class= "subcolumn-bar">
+	      <ul>
+	        <li id="note-source"><%= link_to 'ノート', notes_path %></a></li>
+	        <li id="noteBook-source"><a href="noteBooks">ノートブック</a></li>
+	        <li><%= link_to '新しくノートを作る', new_note_path %></li>
+	        <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+	        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+	      </ul>
+	    </div>
+	 </div>
 
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', notes_path %>
+
+
+
+	<div class = "main-column">
+		<div class = "main-position">
+			<!-- <form> -->
+			<%= render 'form' %>
+			<!-- <textarea rows="20" class="edit-note-text" cols="60"></textarea> -->
+			<!-- </form> -->
+
+		</div>
+	</div>
+
+	<%= link_to 'Show', @note %> |
+	<%= link_to 'Back', notes_path %>
+
+ 	<div id="footer">
+		<p><small>
+			Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+	</div>
+	<!-- </body> -->
+
+<!-- </html> -->
+
