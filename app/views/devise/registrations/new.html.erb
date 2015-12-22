@@ -1,29 +1,46 @@
-<h2>Sign up</h2>
+<div class = "logomark">
+  <h2>~ E n o t i n g ~</h2>
+  <!-- <img src="image/logo.png" alt="Enoting ロゴ" width="140" height="100"> -->
+  <!-- ロゴ思案中 -->
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <div class="login-form">
+    <div class = "signin">
+      <h3>sign up</h3>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+      <%= devise_error_messages! %>
+
+      <!-- メールアドレス登録フォーム -->
+      <div class="mailaddress-form">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, id: "mail_address", class: "text_form" %>
+      </div>
+      <!-- パスワード登録フォーム(8文字以上) -->
+      <div class="password-form">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %>文字以上で入力してくだい)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off", id: "password", class: "text_form" %>
+      </div>
+      <!-- 確認用パスワードフォーム -->
+      <div class="password-form">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", id: "password", class: "text_form" %>
+      </div>  
+
+      <!-- 登録ボタン -->
+      <div class="login-btn">
+        <%= f.submit "新規登録", id:"login-btn", class:"submit-btn" %>
+      </div>
+    <% end %>  
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+<div id="footer">
+  <p><small>
+    Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

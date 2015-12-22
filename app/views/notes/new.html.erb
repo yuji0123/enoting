@@ -1,4 +1,4 @@
-	<%= javascript_include_tag "marked", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application" %>
 
   	<div class = "head-list-column">
 	    <div class = "logomark-a">
@@ -22,10 +22,14 @@
 		<div class = "main-position">
 			<!-- <form> -->
 			<%= render 'form' %>
+			<!-- <%= link_to 'Back', notes_path %> -->
 			<!-- <textarea rows="20" class="edit-note-text" cols="60"></textarea> -->
 			<!-- </form> -->
 
 		</div>
 	</div>
 
-<%= link_to 'Back', notes_path %>
+ 	<div id="footer">
+		<p><small>
+			Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+	</div>

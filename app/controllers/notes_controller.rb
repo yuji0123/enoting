@@ -12,6 +12,7 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
+    gon.text_list = @note.contents  
   end
 
   # GET /notes/new
@@ -21,6 +22,7 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
+    gon.editText = @note.contents
   end
 
   # POST /notes
@@ -62,6 +64,7 @@ class NotesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
