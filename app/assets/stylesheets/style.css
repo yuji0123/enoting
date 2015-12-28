@@ -413,6 +413,7 @@ body{
 .main-column .main-position .notelist-column{
 	overflow: hidden;
 }
+
 /*
 .main-column .main-position .note-list{
 	margin-top: 12px;
@@ -423,8 +424,27 @@ body{
 
 .main-position{
 	margin-top: 12px;
-	width: 1180px;
+	width: 100%;
 	height: 100%;
+}
+
+/* showボタン装飾 edit.html.erb */
+.main-position .link-to-show{
+	font-size: 15px;
+	display: inline-block;
+	border: solid 1px #ccc;
+	padding: 17px 25px;
+	margin-left: 20px;
+	float: left;
+	background-color: #ebebeb;
+	text-decoration: none;
+	transition: 0.4s;
+}
+
+.main-position .link-to-show:hover{
+	background-color: #ddd;
+	color: #505e69;
+	border-color: #d4d4d4;
 }
 
 .notelist-table{
@@ -461,9 +481,6 @@ body{
 }
 
 /* edit.html */
-
-.subcolumn-bar{
-}
 
 .subcolumn-bar ul{
 	overflow: hidden;
@@ -502,9 +519,30 @@ body{
 #result{
 	float: left;
 	width: 480px;
-	font-size: 14px;
+	font-size: 15px;
 	margin-left: 50px;
 	margin-top: -10px;
+	word-break: break-all;
+}
+
+#result p{
+	font-size: 15px;
+	margin-bottom: 10px;
+	line-height: 1.77;
+}
+
+#result ul{
+	margin: 8px auto;
+}
+
+#result ul li{
+	font-size: 14px;
+	margin-top: 8px;
+}
+
+#result > ul > li > p{
+	font-size: 14px;
+	margin-top: 8px;
 }
 
 /* edit.html ここまで */
@@ -533,22 +571,26 @@ body{
 
 
 
-/* form.html.erb すなわち edit.html.erb 編集 */
+/* _form.html.erb 編集 */
 .edit-name-form{
 	margin-left: 40px;
 	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 .edit-text-form{
-	float: left;
+	/*float: left;*/
+	width: 1200px;
+	/* これを指定していないとカラム落ちする */
 	margin-bottom: 20px;
+	overflow: hidden;
 }
 
 .edit-note-title{
 	font-size: 13px;	
 	width: 320px;
 	height: 35px;
-	padding-left: 5px;
+	padding-left: 10px;
 }
 
 .edit-note-text{
@@ -558,10 +600,215 @@ body{
 	margin-left: 40px;
 	padding: 30px 30px 20px;
 	/*max-height: 1200px;*/
+
 }
 
-.update-note-button{
-	margin-left: 40px;	
+.edit-form .link-button{
+	margin-left: 350px;
+}
+
+
+.edit-form .link-button .link-to-note-btn .back-btn{
+	font-size: 15px;
+	display: inline-block;
+	border: solid 1px #ccc;
+	padding: 17px 25px;
+	margin-left: 20px;
+	float: left;
+	background-color: #ebebeb;
+	text-decoration: none;
+	transition: 0.4s;
+}
+
+.edit-form .link-button .link-to-note-btn .back-btn:hover{
+	background-color: #ddd;
+	color: #505e69;
+	border-color: #d4d4d4;
+}
+
+.edit-form > .link-button > input{
+	font-size: 15px;
+	padding: 17px 30px;
+	border: solid 2px #ccc;
+	background-color: #ebebeb;
+	float: left;
+	color: #505e69;
+	transition: 0.4s;	
+} 
+
+.edit-form > .link-button > input:hover{
+	background-color: #ddd;
+	color: #505e69;
+	border-color: #d4d4d4;
+}
+
+/* marked.jsによりeditされたページを装飾する */
+#viewer{
+	margin-left: 100px;
+	margin-top: 30px;
+}
+
+#viewer p{
+	font-size: 15px;
+	margin-bottom: 10px;
+	line-height: 1.77;
+}
+
+#viewer ul{
+	margin: 8px auto;
+}
+
+#viewer ul li{
+	font-size: 14px;
+	margin-top: 8px;
+}
+
+#viewer > ul > li > p{
+	font-size: 14px;
+	margin-top: 8px;
+}
+
+
+/* プロフィール情報を装飾する */
+.edit-profile{
+	margin: 0 auto;
+	width: 960px;
+	padding: 15px 20px;
+}
+
+.edit-profile > h2{
+	font-size: 24px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: solid 2px #ccc;
+}
+
+.edit-profile .profile-textarea{
+	margin: 25px;
+}
+
+.edit-profile .profile-textarea .profile-label{
+	font-size: 15px;
+	margin-right: 40px;
+}
+
+.edit-profile .profile-textarea .mail{
+	margin-left: 59px;
+}
+
+.edit-profile .profile-textarea .password{
+	margin-left: 44px;
+}
+
+.edit-profile .profile-textarea .profile-field{
+	width: 400px;
+	height: 30px;
+	font-size: 14px;
+	padding: 5px 10px;
+}
+
+.edit-profile .edit-profile-button{
+	margin-top: 40px;
+	margin-left: 400px;
+}
+
+.edit-profile .edit-profile-button .link-to-button .cancel-btn{
+	font-size: 15px;
+	display: inline-block;
+	border: solid 1px #ccc;
+	padding: 20px 25px;
+	margin-right: 20px;
+	float: left;
+	background-color: #ebebeb;
+	text-decoration: none;
+	transition: 0.4s;
+}
+
+.edit-profile .edit-profile-button .link-to-button .cancel-btn:hover{
+	background-color: #ddd;
+	color: #505e69;
+	border-color: #d4d4d4;
+}
+
+
+.edit-profile .edit-profile-button .change-btn{
+	font-size: 15px;
+	padding: 17px 30px;
+	border: solid 2px #ccc;
+	background-color: #ebebeb;
+	color: #505e69;
+	transition: 0.4s;
+}
+
+.edit-profile .edit-profile-button .change-btn:hover{
+	background-color: #ddd;
+	color: #505e69;
+	border-color: #d4d4d4;
+}
+
+.edit-profile .delete-account{
+	margin-top: 20px;
+	text-align: center;
+}
+
+.edit-profile .delete-account .delete-account-btn{
+	font-size: 15px;
+	padding: 17px 30px;
+	border: solid 2px #ccc;
+	background-color: #ebebeb;
+	color: #505e69;
+	transition: 0.4s;
+}
+
+
+.edit-profile .delete-account .delete-account-btn:hover{
+	background-color: #ddd;
+	color: #505e69;
+	border-color: #d4d4d4;
+}
+
+
+/* show.html.erb 編集　*/
+.show-column{
+	width: 1040px;
+}
+
+.note-name{
+	margin-top: 40px;
+	margin-left: 100px;
+	border-bottom: 1px solid #ccc;
+}
+
+.note-name > h2{
+	font-size: 24px;
+}
+
+.show-list-btn{
+	overflow: hidden;
+	margin-top: 50px;
+}
+
+.show-list-btn .show-to-btn:first-child{
+	margin-left: 750px;
+}
+
+.show-list-btn .show-to-btn{
+	font-size: 15px;
+	display: inline-block;
+	border: solid 1px #ccc;
+	padding: 17px 25px;
+	margin-left: 20px;
+	float: left;
+	background-color: #ebebeb;
+	text-decoration: none;
+	transition: 0.4s;	
+	color: #505e69;
+}
+
+.show-list-btn .show-to-btn:hover{
+	background-color: #ddd;
+	color: #505e69;
+	border-color: #d4d4d4;
 }
 
 /* フッター */

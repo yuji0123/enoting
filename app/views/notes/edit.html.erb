@@ -1,4 +1,6 @@
-	<%= javascript_include_tag "marked", "data-turbolinks-track" => true %>
+
+
+
   	<div class = "head-list-column">
 	    <div class = "logomark-a">
 	      <h2>~ E n o t i n g ~</h2>
@@ -22,16 +24,10 @@
 
 	<div class = "main-column">
 		<div class = "main-position">
-			<!-- <form> -->
 			<%= render 'form' %>
-			<!-- <textarea rows="20" class="edit-note-text" cols="60"></textarea> -->
-			<!-- </form> -->
-
+			<%= link_to 'Show', @note, class:"link-to-show" %>
 		</div>
 	</div>
-
-	<%= link_to 'Show', @note %> |
-	<%= link_to 'Back', notes_path %>
 
  	<div id="footer">
 		<p><small>

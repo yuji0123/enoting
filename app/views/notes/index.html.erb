@@ -48,8 +48,8 @@
         <td class="noteRows"><%= note.updated_at %></td>
         <td class="noteRows button-rows"><%= link_to 'Show', note %> </td>
         <td class="noteRows button-rows"><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td class="noteRows button-rows"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td class="noteRows button-rows">preview</td>
+        <td class="noteRows button-rows"><%= link_to 'Destroy', note, method: :delete, data: { confirm: '選択したノートを削除します．よろしいですか？' } %></td>
+        <td class="noteRows button-rows">share</td>
         <!-- ここに share のボタンを追加したい． -->
       </tr>
     <% end %>
