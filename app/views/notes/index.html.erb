@@ -1,29 +1,63 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<h1>Listing Notes</h1>
 
-<table>
+  <div class = "head-list-column">
+    <div class = "logomark-a">
+      <h2>~ E n o t i n g ~</h2>
+      <!-- <img src="image/logo.png" alt="Enoting ロゴ" width="140" height="100"> -->
+      <!-- ロゴ思案中 -->
+    </div>
+
+    <div class= "subcolumn-bar">
+      <ul>
+        <li id="note-source"><%= link_to 'ノート', notes_path %></a></li>
+        <li id="noteBook-source"><a href="noteBook.html">ノートブック</a></li>
+        <li><%= link_to '新しくノートを作る', new_note_path %></li>
+        <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- 
+  <div class = "main-column">
+    <div class = "main-position">
+      <div class="notelist-column">
+      </div>
+    </div>
+  </div>
+ -->
+
+<table class="noteList">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Contents</th>
-      <th colspan="3"></th>
+      <th>Updated_at</th>
+      <th class="button-rows"></th>
+      <th class="button-rows"></th>
+      <th class="button-rows"></th>
+      <th class="button-rows"></th>
+      <!-- <th colspan="3"></th> -->
     </tr>
   </thead>
 
   <tbody>
     <% @notes.each do |note| %>
       <tr>
-        <td><%= note.name %></td>
-        <td><%= note.contents %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="noteRows noteRows-title"><%= note.name %></td>
+        <td class="noteRows"><%= note.updated_at %></td>
+        <td class="noteRows button-rows"><%= link_to 'Show', note %> </td>
+        <td class="noteRows button-rows"><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td class="noteRows button-rows"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="noteRows button-rows">preview</td>
+        <!-- ここに share のボタンを追加したい． -->
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Note', new_note_path %>
+  <div id="footer">
+    <p><small>
+      Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+  </div>

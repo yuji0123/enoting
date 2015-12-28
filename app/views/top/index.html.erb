@@ -1,0 +1,56 @@
+
+
+	<!-- 登録、ログインボタンフォーム -->
+	<div class = "home-head" style="background-image:url(<%= asset_path "achive01.png" %>)">
+		<div class = "logo">
+			<h2>~ E n o t i n g ~</h2>
+			<!-- <img src="image/logo.png" alt="Enoting ロゴ" width="140" height="100"> -->
+			<!-- ロゴ思案中 -->
+		</div>
+		<div class = "achivement">
+			<p class = "l1">"便利"を"カタチ"に．</p>
+			<p class = "l2">マークダウン記法を利用したノートエディタ．</p>
+		</div>
+		<div class = "form-statement">
+			<%= link_to '無料会員登録', ../users/sign_up ,class:"btn" %>
+		</div>
+		<div class = "form-statement">
+			<%= link_to 'ログイン', {controller:"devise/sessions"}, class:"btn" %>
+		</div>
+	</div>
+	<!-- ここまで -->
+
+	<!-- Enotingとは -->
+	<div class = "adv-point">
+		<div class="what-purpose">
+			<h2>Enotingとは？</h2>
+		</div>
+		<div class="edit">
+			<%= image_tag 'edit.jpg', width:"100%", height:"360" %>
+			<h3>編集する</h3>
+			<p>Markdown記述を利用して、綺麗にかつ<br>
+				簡単にノートやちょっとしたメモをとる<br>
+				ことができます。</p>
+		</div>
+		<div class="view">
+			<%= image_tag 'view.jpg', width:"100%", height:"420" %>
+			<h3>閲覧する</h3>
+			<p>Markdownエディタを利用して編集した<br>
+				ノートを閲覧出来ます。viewモードで閲<br>
+				覧出来るので、ノートとして印刷するこ<br>
+				とも可能です。</p>
+		</div>
+		<div class="share">
+			<%= image_tag 'share.jpg', width:"100%", height:"350" %>
+			<h3>共有する</h3>
+			<p>自分の編集したノートは公開することが出来ます。<br>他の人は公開されている他の人のノートを閲覧す<br>ることが出来ます。</p>
+		</div>
+	</div>
+	<!-- ここまで -->
+
+
+	<!-- フッター -->
+ 	<div id="footer">
+		<p><small>
+			Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+	</div>
