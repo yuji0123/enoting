@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'friends/search'
 
   get 'friends/index'
@@ -7,7 +8,10 @@ Rails.application.routes.draw do
   get 'tips/index'
   get 'top/index'
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations'
+  }
+
   resources :notes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

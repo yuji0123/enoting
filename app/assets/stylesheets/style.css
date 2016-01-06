@@ -198,6 +198,10 @@ body{
 	color: #3b3b3b;
 }
 
+.login-form .nickname-form{
+	margin-bottom: 20px;
+}
+
 /* addressフォーム */
 .login-form .mailaddress-form{
 	font-family: sans-serif;
@@ -778,6 +782,10 @@ body{
 .edit-profile .profile-textarea .profile-label{
 	font-size: 15px;
 	margin-right: 40px;
+}
+
+.edit-profile .profile-textarea .nickname{
+	margin-left: 73px;
 }
 
 .edit-profile .profile-textarea .mail{
