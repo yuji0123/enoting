@@ -1,3 +1,4 @@
+<!-- <p id="notice"><%= notice %></p> -->
 
 
   <div class = "head-list-column">
@@ -37,24 +38,32 @@
     </div>
   </div>
 
+<!-- 
+  <div class = "main-column">
+    <div class = "main-position">
+      <div class="notelist-column">
+      </div>
+    </div>
+  </div>
+ -->
+
+ <p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+ 
+</p>
+  <p><strong>あなたが申請元である友達関係</strong></p>
+  <% @friends_of_from_user.each do |friend| %>
+    <div><%= friend.email %></div>
+  <% end %>
+  <p><strong>あなたが申請先である友達関係</strong></p>
+  <% @friends_of_to_user.each do |friend| %>
+    <div><%= friend.email %></div>
+  <% end %>
 
 
-  <!-- <p id="notice"><%= notice %></p> -->
 
-  <div class = "show-column">
-		<div class = "note-name">
-		  	<h2><%= @note.name %></h2>
-		</div>
-
-		<div id="viewer"></div>
-
-		<div class = "show-list-btn">
-			<%= link_to 'Edit', edit_note_path(@note), class:"show-to-btn" %>
-			<%= link_to 'Back', notes_path, class:"show-to-btn" %>
-		</div>
-	</div>
-
- 	<div id="footer">
-		<p><small>
-			Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
-	</div>
+  <div id="footer">
+    <p><small>
+      Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+  </div>

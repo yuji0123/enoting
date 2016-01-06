@@ -1,0 +1,85 @@
+  <div class = "head-list-column">
+    <div class = "logomark-a">
+      <h2>~ E n o t i n g ~</h2>
+      <!-- <img src="image/logo.png" alt="Enoting ロゴ" width="140" height="100"> -->
+      <!-- ロゴ思案中 -->
+    </div>
+
+    <div class= "subcolumn-bar">
+      <ul class = "dropmenu">
+        <li id="note-source"><a>ノート</a>
+          <ul>
+            <li><%= link_to 'ノート一覧', notes_path %></li>
+            <li><%= link_to 'ノート検索', notes_search_path %></li>
+            <li><%= link_to '新しくノートを作成', new_note_path %></li>
+          </ul>
+        </li>
+        <li><a>フレンド</a>
+          <ul>
+            <li><%= link_to 'フレンド一覧', notes_path %></li>
+            <li><%= link_to 'フレンド検索', notes_path %></li>
+          </ul>
+        </li>
+        <li><a>プロフィール</a>
+          <ul>
+            <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+          </ul>
+        </li>
+        <li><a>tips</a>
+          <ul>
+            <li><%= link_to 'Markdownとは？', tips_index_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="note-search-form">
+  	<%= form_tag notes_search_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
+  	<p>
+    <%= text_field_tag :search, params[:search], class:"note-search-field", placeholder:"ノートを検索" %>
+    <%= submit_tag "Search", class:"note-search-btn", :name => nil %>
+  	</p>
+	<% end %>
+  </div>
+
+  <div class = "note-search-list">
+	<% if params[:search].present? %>
+	  <table class="noteList">
+		  <thead>
+		    <tr>
+		      <th>Name</th>
+		      <th>Updated_at</th>
+		      <th class="button-rows"></th>
+		      <th class="button-rows"></th>
+		      <th class="button-rows"></th>
+		      <th class="button-rows"></th>
+		      <!-- <th colspan="3"></th> -->
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @notes.each do |note| %>
+		      <tr>
+		        <td class="noteRows noteRows-title"><%= note.name %></td>
+		        <td class="noteRows"><%= note.updated_at %></td>
+		        <td class="noteRows button-rows"><%= link_to 'Show', note, class:"notes-show-btn" %> </td>
+		        <td class="noteRows button-rows"><%= link_to 'Edit', edit_note_path(note) %></td>
+		        <td class="noteRows button-rows"><%= link_to 'Destroy', note, method: :delete, data: { confirm: '選択したノートを削除します．よろしいですか？' } %></td>
+		        <td class="noteRows button-rows">share</td>
+		        <!-- ここに share のボタンを追加したい． -->
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+  	<% else %>
+    	<!-- 何も表示しない -->
+  	<% end %>
+  </div>
+
+  <div id="footer">
+    <p><small>
+      Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+  </div>

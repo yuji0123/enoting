@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211041249) do
+ActiveRecord::Schema.define(version: 20160106142837) do
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "from_user_id", limit: 4
+    t.integer  "to_user_id",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "notes", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.text     "contents",   limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "user_name",  limit: 255
+    t.integer  "user_id",    limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151211041249) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "user_name",              limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

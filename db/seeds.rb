@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Friendship.create(:from_user_id => 1, :to_user_id => 2)
+Friendship.create(:from_user_id => 1, :to_user_id => 3)
+Friendship.create(:from_user_id => 1, :to_user_id => 4)
+Friendship.create(:from_user_id => 5, :to_user_id => 1)
+Friendship.create(:from_user_id => 6, :to_user_id => 1)
+Friendship.create(:from_user_id => 3, :to_user_id => 2)

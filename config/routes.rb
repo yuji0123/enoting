@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'friends/search'
+
+  get 'friends/index'
+
+  get 'notes/search'
+  get 'tips/index'
   get 'top/index'
 
   devise_for :users

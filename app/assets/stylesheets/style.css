@@ -414,13 +414,6 @@ body{
 	overflow: hidden;
 }
 
-/*
-.main-column .main-position .note-list{
-	margin-top: 12px;
-	float: left;
-	width: 700px;
-	height: 100%;
-}*/
 
 .main-position{
 	margin-top: 12px;
@@ -429,19 +422,24 @@ body{
 }
 
 /* showボタン装飾 edit.html.erb */
-.main-position .link-to-show{
+.link-to-show{
 	font-size: 15px;
 	display: inline-block;
 	border: solid 1px #ccc;
 	padding: 17px 25px;
-	margin-left: 20px;
+	margin-right: 20px;
 	float: left;
 	background-color: #ebebeb;
 	text-decoration: none;
 	transition: 0.4s;
 }
 
-.main-position .link-to-show:hover{
+.fix-width{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.link-to-show:hover{
 	background-color: #ddd;
 	color: #505e69;
 	border-color: #d4d4d4;
@@ -482,45 +480,11 @@ body{
 
 /* edit.html */
 
-.subcolumn-bar ul{
-	overflow: hidden;
-	/*width: 730px;*/
-}
-
-.subcolumn-bar li{
-	list-style-type: none;
-	float: left;
-	height: 50px;
-	width: 150px;
-	/*text-indent: 10px;*/
-	text-align: center;
-	/*border: 1px solid #15B59B;*/
-	line-height: 50px;
-	border-bottom: 3px solid #15859B;
-	/*background-color: #15B59B;*/
-	font-size: 13px;
-	transition: 0.5s linear;
-	/*margin: 0 2px 0;*/
-}
-
-.subcolumn-bar li a{
-	display: block;
-	text-decoration: none;
-	color: #000;
-	transition: 0.3s linear;
-}
-
-.subcolumn-bar li a:hover{
-	background-color: #dcdcdc;
-	border-bottom: 4px solid #15859B;
-}
-
-
 #result{
 	float: left;
-	width: 480px;
+	width: 500px; /* 540pxが一番ok */
 	font-size: 15px;
-	margin-left: 50px;
+	margin-left: 30px; /* 40px */
 	margin-top: -10px;
 	word-break: break-all;
 }
@@ -545,6 +509,19 @@ body{
 	margin-top: 8px;
 }
 
+#result > h2{
+	margin-top: 30px;
+	font-size: 19px;
+}
+
+#result > h2:first-child{
+	margin-top: 20px;
+}
+
+#result > h3{
+	margin-top: 30px;
+}
+
 /* edit.html ここまで */
 
 
@@ -567,20 +544,120 @@ body{
 	width: 850px;
 	float: left;
 }
+
+.subcolumn-bar ul{
+	/*overflow: hidden;*/
+	/*width: 730px;*/
+}
+
+.subcolumn-bar > ul > li{
+	list-style-type: none;
+	float: left;
+	height: 50px;
+	width: 150px;
+	/*text-indent: 10px;*/
+	text-align: center;
+	line-height: 50px;
+	border-bottom: 3px solid #15859B;
+	font-size: 13px;
+	transition: 0.5s linear;
+}
+
+.subcolumn-bar > ul > li > a{
+	display: block;
+	text-decoration: none;
+	color: #000;
+	transition: 0.3s linear;
+}
+
+.subcolumn-bar > ul > li > a:hover{
+	background-color: #dcdcdc;
+	/*border-bottom: 4px solid #15859B;*/
+}
+
+.dropmenu{
+	margin-bottom: 120px;
+}
+.dropmenu li{
+	position: relative;
+	/*width: 20%;*/
+	float: left;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.dropmenu li a{
+  	display: block;
+}
+
+.dropmenu li ul{
+  	list-style: none;
+  	position: absolute;
+  	top: 100%;
+  	left: 0;
+  	margin: 0;
+	padding: 0;
+	width: 450px;
+  	/*border-radius: 0 0 3px 3px;*/
+}
+
+.dropmenu > li > ul > li{
+  overflow: hidden;
+  width: 150px;
+  height: 0;
+  margin-top: -10px;
+}
+
+.dropmenu > li > ul > li{
+	margin-top: 3px;
+}
+
+.dropmenu li ul li a{
+  padding: 13px 20px;
+  background: #15859B;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.dropmenu li:hover ul li{
+  overflow: visible;
+  height: 54px;
+  /*border-top: 1px solid #7c8c0e;*/
+  /*border-bottom: 1px solid #616d0b;*/
+}
+
+.dropmenu > li > ul > li > a:hover{
+	background-color: #f5f5f5;
+	color: #15859B;	
+	transition: .5s;
+}
+
+.dropmenu li:hover ul li:first-child{
+  border-top: 0;
+}
+.dropmenu li:hover ul li:last-child{
+  border-bottom: 0;
+}
+.dropmenu li:hover ul li:last-child a{
+  border-radius: 0 0 3px 3px;
+}
 /* Enoting サブカラム ここまで */
 
 
 
 /* _form.html.erb 編集 */
 .edit-name-form{
-	margin-left: 40px;
+	margin-left: 20px;  /* 本当は40px;*/
 	margin-bottom: 10px;
 	overflow: hidden;
 }
 
 .edit-text-form{
 	/*float: left;*/
-	width: 1200px;
+	width: 1240px;
 	/* これを指定していないとカラム落ちする */
 	margin-bottom: 20px;
 	overflow: hidden;
@@ -594,17 +671,20 @@ body{
 }
 
 .edit-note-text{
-	width: 540px;
+	width: 500px; /* 530px が一番見栄えよし． */
 	float: left;
 	font-size: 15px;
-	margin-left: 40px;
+	margin-left: 20px; /* 40pxがいい感じ */
 	padding: 30px 30px 20px;
 	/*max-height: 1200px;*/
-
 }
 
+/*.edit-form .from_edit-to_show .link-to-show{
+	margin-left: 255px;
+}*/
+
 .edit-form .link-button{
-	margin-left: 350px;
+	margin-left: 370px;
 }
 
 
@@ -651,7 +731,7 @@ body{
 #viewer p{
 	font-size: 15px;
 	margin-bottom: 10px;
-	line-height: 1.77;
+	line-height: 1.4;
 }
 
 #viewer ul{
@@ -668,6 +748,14 @@ body{
 	margin-top: 8px;
 }
 
+#viewer > ul > li > ul > li{
+	margin-left: -15px;
+}
+
+#viewer > h2{
+	margin-top: 30px;
+	font-size: 19px;
+}
 
 /* プロフィール情報を装飾する */
 .edit-profile{
@@ -810,6 +898,80 @@ body{
 	color: #505e69;
 	border-color: #d4d4d4;
 }
+
+/* note-search.html.erb ここから */
+.note-search-field{
+	margin-left: 40px;
+	line-height: 2.0;
+	width: 320px;
+	border: 1px solid #cacaca;
+	border-radius: 2px;
+	font-size: 18px;
+	color: #3b3b3b;
+	padding: 5px 10px 5px;
+}
+
+.note-search-btn{
+	margin-left: 20px;
+	font-size: 15px;
+	padding: 14px 30px;
+	border: solid 2px #ccc;
+	background-color: #ebebeb;
+	color: #505e69;
+	transition: 0.4s;	
+	cursor: pointer;
+}
+
+.note-search-btn:hover{
+	background-color: #ddd;
+	color: #505e69;
+	border-color: #d4d4d4;
+}
+
+/* note-search.html.erb ここまで */
+
+/* tips.html.erb ここから */
+.markdown{
+	width: 1000px;
+	margin: 20px auto;
+	background-color: #fdf5e6;
+	padding: 30px 40px;
+	color: #444444;
+}
+
+.markdown p{
+	font-size: 14px;
+}
+
+.what-is-markdown > h2{
+	margin-bottom: 30px;
+	font-size: 22px;
+}
+
+.what-is-markdown{
+	margin-bottom: 60px;
+}
+
+.intro-markdown{
+	margin-bottom: 30px;
+}
+
+.intro-markdown > h2{
+	margin-bottom: 25px;
+}
+
+
+.how-to-write-markdown > h4{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+
+.how-to-write-markdown > h3{
+	margin-top: 60px;
+	font-size: 19px;
+}
+
 
 /* フッター */
 #footer{
