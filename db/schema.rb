@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160107103454) do
     t.text     "contents",   limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.string   "user_name",  limit: 255
     t.integer  "user_id",    limit: 4
   end
 

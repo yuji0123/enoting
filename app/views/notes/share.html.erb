@@ -38,33 +38,27 @@
   </div>
 
 
-
+  
   <!-- <p id="notice"><%= notice %></p> -->
 
-  <div class = "show-column">
-		<div class = "note-name">
-		  	<h2><%= @note.name %></h2>
-        <% if @note.user_id == current_user.id%>
-        <%= link_to "share", {action: 'share', id: @note.id} , class:"share_btn" %>
-        <% end %>
-		</div>
+  <div class="note-search-form">
+    <%= form_tag('/share', :method => :get) do %>
+    <%= hidden_field_tag "id", @note.id %>
+    <%= hidden_field_tag "note_id", @note.id %>
+      <% @friends.each do |friend|%>
+        <%= check_box_tag 'user_id[]',friend.id, false, id: friend.user_name%>
+        <%= label_tag friend.user_name, friend.user_name %>
+      <% end %>
+    <p class = "friends-sentence">この「<%= @note.name%>」を共有するフレンドの名前を入力してください．</p>
+  </div>
 
-		<div id="viewer"></div>
-
-		<div class = "show-list-btn">
-			<%= link_to 'Edit', {action: 'share'}, id: "note.id", class:"show-to-btn" %>
-			<%= link_to 'Back', notes_path, class:"show-to-btn" %>
-		</div>
-	</div>
-    
-    <%= form_for(@note) do |f| %>
-    <div class = "edit-form" style="display:none">
-      <div class="edit-text-form">
-      <%= f.text_area :contents, class: "edit-note-text", size: "60x20" %>
-      <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
-      </div>
-    </div>  
+  <div class="share-submit-btn">
+    <%= submit_tag "共有する", class:"share-btn", :name => nil %>
     <% end %>
+  </div>
+  </div>
+
+
 
  	<div id="footer">
 		<p><small>

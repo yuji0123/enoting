@@ -66,10 +66,22 @@
       <tr>
         <td class="noteRows noteRows-title"><%= note.name %></td>
         <td class="noteRows noteRows-update"><%= note.updated_at %></td>
-        <td class="noteRows noteRows-author"><%= note.user_name %></td>
+        <td class="noteRows noteRows-author"><%= note.user_id %></td>
         <td class="noteRows button-rows"><%= link_to 'Show', note, class:"notes-show-btn" %> </td>
         <td class="noteRows button-rows"><%= link_to 'Edit', edit_note_path(note) %></td>
         <td class="noteRows button-rows"><%= link_to 'Destroy', note, method: :delete, data: { confirm: '選択したノートを削除します．よろしいですか？' } %></td>
+        <!-- <td class="noteRows button-rows">share</td> -->
+        <!-- ここに share のボタンを追加したい． -->
+      </tr>
+    <% end %>
+    <% @shared_notes.each do |note| %>
+      <tr>
+        <td class="noteRows noteRows-title"><%= note.name %></td>
+        <td class="noteRows noteRows-update"><%= note.updated_at %></td>
+        <td class="noteRows noteRows-author"><%= note.user_id %></td>
+        <td class="noteRows button-rows"><%= link_to 'Show', note, class:"notes-show-btn" %> </td>
+        <td class="noteRows button-rows"></td>
+        <td class="noteRows button-rows"><%= link_to 'Destroy', note, method: :delete, data: { confirm: '選択したノートの共有を削除します．よろしいですか？' } %></td>
         <!-- <td class="noteRows button-rows">share</td> -->
         <!-- ここに share のボタンを追加したい． -->
       </tr>

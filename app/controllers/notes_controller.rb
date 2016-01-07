@@ -9,6 +9,8 @@ class NotesController < ApplicationController
     # @notes = Note.all.reverse_order
     # @notes = Note.all
     @notes = Note.where( 'user_id' => current_user.id ).reverse_order
+
+    @shared_notes = User.find(current_user.id).notes
   end
 
 
@@ -28,6 +30,18 @@ class NotesController < ApplicationController
   end
 
   def share
+    @friends = User.find(current_user.id).friends
+  end
+
+  def share_update
+    params[:user_id].each do |shared_user_id|
+      # if Share.where(note_id: params[:note_id]).where(user_id: shared_user_id) == nil
+       Share.create(:note_id => params[:note_id], :user_id => shared_user_id)
+      # end
+    end 
+    @note = Note.find(params[:id])
+    @friends = User.find(current_user.id).friends
+    render "share"
   end
 
   def search
