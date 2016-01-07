@@ -318,6 +318,7 @@ body{
 
 .noteList > thead > tr > .button-rows{
 	border-right: none;
+	width: 50px;
 }
 
 .noteList > thead > tr > .button-rows:last-child{
@@ -336,6 +337,15 @@ body{
 
 .noteList > tbody > tr > .noteRows-title{
 	font-size: 13px;
+	width: 330px;
+}
+
+.noteList > tbody > tr > .noteRows-update{
+	width: 200px;
+}
+
+.noteList > tbody > tr > .noteRows-author{
+	width: 120px;
 }
 
 .noteList > tbody > tr > .button-rows{
@@ -877,6 +887,19 @@ body{
 
 .note-name > h2{
 	font-size: 24px;
+	display: inline-block;
+}
+
+.note-name > .share_btn{
+	margin-left: 450px;
+	font-size: 15px;
+	display: inline-block;
+	border: solid 1px #ccc;
+	padding: 15px 20px;
+	background-color: #ebebeb;
+	text-decoration: none;
+	transition: 0.4s;	
+	color: #505e69;
 }
 
 .show-list-btn{

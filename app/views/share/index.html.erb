@@ -1,6 +1,3 @@
-<!-- <p id="notice"><%= notice %></p> -->
-
-
   <div class = "head-list-column">
     <div class = "logomark-a">
       <h2>~ E n o t i n g ~</h2>
@@ -38,29 +35,19 @@
     </div>
   </div>
 
-<!-- 
-  <div class = "main-column">
-    <div class = "main-position">
-      <div class="notelist-column">
-      </div>
-    </div>
-  </div>
- -->
- <div class = "friend-width">
-  <div class = "my-nickname">
-    <h2>あなたの名前 : <%= @user.user_name %></h2>
-  </div>
-
   <div class = "my-friend-list">
-    <h2>フレンド一覧</h2>
+    <h2>このノートを共有したい友達を選んでください．</h2>
+    <%= check_box_tag(:user_name, "name") %>
+    <%= check_box_tag(:user_name, "name") %>
+    <%= check_box_tag(:user_name, "name") %>
     <% @user.friends.uniq.each do |friend| %>
-    <p><%= friend.user_name %></p>
+    <p><%= check_box_tag(:user_name, "name") %><%= friend.user_name %></p>
+    <%= Share.create(:note_id => note.id, :user_id => friend.id) %>
     <% end %>
   </div>
- </div>
 
-
-  <div id="footer">
-    <p><small>
-      Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+  <div class="share-submit-btn">
+    <%= form_tag share_index_path, :method => 'get' do %>
+    <%= submit_tag "共有する", class:"share-btn", :name => nil %>
+    <% end %>
   </div>

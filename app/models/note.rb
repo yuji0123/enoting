@@ -1,5 +1,4 @@
 class Note < ActiveRecord::Base
-	# has_one :user
-	# 追加部分
-	# scope :latest ,order('updated_at desc')
+	has_many :shares
+	has_many :users, :through => :shares
 end
