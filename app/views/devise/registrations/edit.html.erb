@@ -41,6 +41,8 @@
 
   <!-- <%= resource_name.to_s.humanize %>  -->
 
+  <p id = "notice"><%= notice %></p>
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
@@ -78,7 +80,7 @@
 
     <div class="edit-profile-button">
       <div class = "link-to-button">
-        <%= link_to "キャンセル", :back, class:"cancel-btn" %>
+        <%= link_to "キャンセル", notes_path, class:"cancel-btn" %>
       </div>
       <%= f.submit "変更する", class:"change-btn" %>
     </div>

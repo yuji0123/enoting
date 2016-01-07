@@ -1,3 +1,16 @@
+$(document).ready(function() {
+    marked.setOptions({
+        langPrefix: ''
+    });
+
+    var src = $('.edit-note-text').val();
+    var html = marked(src);
+
+    $('#viewer').html(html);
+
+});
+
+
 // $('.notes-show-btn').click(function() {
 //     marked.setOptions({
 //         langPrefix: ''

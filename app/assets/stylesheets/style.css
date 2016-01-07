@@ -207,7 +207,7 @@ body{
 	font-family: sans-serif;
 	font-size: 14px;
 	width: 320px;
-	margin: 0 auto 0;
+	margin: 0 auto 20px;
 }
 
 /* passwordフォーム */
@@ -920,7 +920,7 @@ body{
 }
 
 .note-search-btn{
-	margin-left: 20px;
+	margin: 20px auto;
 	font-size: 15px;
 	padding: 14px 30px;
 	border: solid 2px #ccc;
