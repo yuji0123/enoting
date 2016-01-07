@@ -1,0 +1,136 @@
+  <div class = "head-list-column">
+    <div class = "logomark-a">
+      <h2>~ E n o t i n g ~</h2>
+      <!-- <img src="image/logo.png" alt="Enoting ロゴ" width="140" height="100"> -->
+      <!-- ロゴ思案中 -->
+    </div>
+
+    <div class= "subcolumn-bar">
+      <ul class = "dropmenu">
+        <li id="note-source"><a>ノート</a>
+          <ul>
+            <li><%= link_to 'ノート一覧', notes_path %></li>
+            <li><%= link_to 'ノート検索', notes_search_path %></li>
+            <li><%= link_to '新しくノートを作成', new_note_path %></li>
+          </ul>
+        </li>
+        <li><a>フレンド</a>
+          <ul>
+            <li><%= link_to 'フレンド一覧', friends_index_path %></li>
+            <li><%= link_to 'フレンド検索', friends_search_path %></li>
+          </ul>
+        </li>
+        <li><a>プロフィール</a>
+          <ul>
+            <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+          </ul>
+        </li>
+        <li><a>tips</a>
+          <ul>
+            <li><%= link_to 'Markdownとは？', tips_index_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </div>
+
+<div class = "markdown">
+	<div class = "what-is-markdown">
+		<h2>そもそもMarkdownとは、、、？</h2>
+		<p>HTMLが手軽なマークアップ言語ではあるのに、開始タグや終了タグなどが存在し、文章作成やちょっとしたメモ書きには不向きである．</p>
+		<p>この問題点を解決し、手軽なマークアップ言語としてHTML形式に当てはめて文書を記述することの出来るフォーマットのことである．</p>
+	</div>
+
+	<div class = "intro-markdown">
+		<h2>Markdownの書き方</h2>
+		<p>Markdownには1つのHTMLタグを示す場合でも、様々な書き方があります．</p>
+		<p>その中でも主に作者が便利でよく使うものを、ここに例として挙げます．</p>
+	</div>
+
+	<div class = "how-to-write-markdown">
+		<h3>見出し</h3>
+		<p>ハッシュの数と見出しのレベルが一致</p>
+
+		<h4>Markdown</h4>
+		<p># 見出し1</p>
+		<p>## 見出し2</p>
+		<p>### 見出し3</p>
+
+		<h4>HTML</h4>
+		<p>&lt;h1&gt;見出し1&lt;/h1&gt;</p>
+		<p>&lt;h2&gt;見出し2&lt;/h2&gt;</p>
+		<p>&lt;h3&gt;見出し3&lt;/h3&gt;</p>
+
+		<h3>リスト</h3>
+		<p>リストを示す場合、*(アスタリスク)，-(ハイフン)，+(プラス)のどれかを入力し，スペース，またはタブを挿入する．</p>
+    <p>リストの途中で，スペース，タブを入れて記号を変更すると，入れ子として扱われる．</p>
+
+    <h4>Markdown</h4>
+    <p>* あいうえお</p>
+    <p>* かきくけこ</p>
+    <p> - さしすせそ</p>
+
+    <h4>HTML</h4>
+    <p>&lt;ul&gt;</p>
+    <p>&nbsp;&lt;li&gt;あいうえお&lt;/li&gt;</p>
+    <p>&nbsp;&lt;li&gt;かきくけこ&lt;/li&gt;</p>
+    <p>&nbsp;&nbsp;&lt;ul&gt;</p>
+    <p>&nbsp;&nbsp;&nbsp;&lt;li&gt;さしすせそ&lt;/li&gt;</p>
+    <p>&nbsp;&nbsp;&lt;/ul&gt;</p>
+    <p>&lt;/ul&gt;</p>
+
+    <h3>段落・改行</h3>
+    <p>空白行で囲まれた1行，または複数行の文章は、ひとつの段落になる．</p>
+    <p>改行が入っていても，1行以上の空白が入っていなければ、ひとつの段落と見なされる．</p>
+
+    <h4>Markdown</h4>
+    <p>あいうえお かきくけこ</p>
+    <br>
+    <p>さしすせそ</p>
+    <p>たちつてと なにぬねの</p>
+
+    <h4>HTML</h4>
+    <p>&lt;p&gt;あいうえお かきくけこ&lt;/p&gt;</p>
+    <br>
+    <p>&lt;p&gt;さしすせそ たちつてと なにぬねの&lt;/p&gt;</p>
+
+    <p>もし複数行で改行を入れたい場合、改行したい末尾に半角スペースを2つ以上入れると改行になる．</p>
+
+
+    <h4>Markdown</h4>
+    <p>あいうえお かきくけこ (半角スペース2つ)</p>
+    <p>さしすせそ (半角スペース2つ)</p>
+    <p>たちつてと なにぬねの</p>
+
+    <h4>HTML</h4>
+    <p>&lt;p&gt;あいうえお かきくけこ&lt;br&gt;</p>
+    <p>&lt;p&gt;さしすせそ&lt;br&gt;</p>
+    <p>&lt;p&gt;たちつてと なにぬねの&lt;/p&gt;</p>
+
+    <h3>強調</h3>
+    <p>強調を示す場合，2つの*(アスタリスク)か，_(アンダースコア)で文言を囲む．</p>
+
+    <h4>Markdown</h4>
+    <p>あいうえお か**きく**けこ __さしすせそ__</p>
+
+    <h4>HTML</h4>
+    <p>あいうえお か&lt;strong&gt;きく&lt;/strong&gt;けこ &lt;strong&gt;さしすせそ&lt;/strong&gt;</p>
+
+    <h3>罫線</h3>
+    <p>3つ以上の*(アスタリスク), -(ハイフン), _(アンダースコア)と半角スペースのみの行は，罫線として扱われる．</p>
+
+    <h4>Markdown</h4>
+    <p>* * *</p>
+    <p>***</p>
+
+    <h4>HTML</h4>
+    <p>&lt;hr&gt;</p>
+	</div>
+</div>
+
+	<!-- フッター -->
+ 	<div id="footer">
+		<p><small>
+			Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+	</div>

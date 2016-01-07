@@ -14,7 +14,7 @@
 <div class = "edit-form">
   <div class="edit-name-form">
     <!-- <%= f.label :name %><br> -->
-    <%= f.text_field :name, class: "edit-note-title" %>
+    <%= f.text_field :name, class: "edit-note-title", placeholder:"title" %>
   </div>
   <div class="edit-text-form">
     <!-- <%= f.label :contents %><br> -->
@@ -22,6 +22,12 @@
     <div id="result"></div>
     <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
   </div>  
+
+<!--   <div class = "from_edit-to_show">
+    <% if controller.controller_name == "notes" && controller.action_name == "edit" %>
+      <%= link_to 'Show', @note, class:"link-to-show" %>
+    <% end %>
+  </div> -->
 
   <div class="link-button">
     <%= f.submit  %>

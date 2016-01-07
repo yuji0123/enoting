@@ -1,0 +1,74 @@
+  <div class = "head-list-column">
+    <div class = "logomark-a">
+      <h2>~ E n o t i n g ~</h2>
+      <!-- <img src="image/logo.png" alt="Enoting ロゴ" width="140" height="100"> -->
+      <!-- ロゴ思案中 -->
+    </div>
+
+    <div class= "subcolumn-bar">
+      <ul class = "dropmenu">
+        <li id="note-source"><a>ノート</a>
+          <ul>
+            <li><%= link_to 'ノート一覧', notes_path %></li>
+            <li><%= link_to 'ノート検索', notes_search_path %></li>
+            <li><%= link_to '新しくノートを作成', new_note_path %></li>
+          </ul>
+        </li>
+        <li><a>フレンド</a>
+          <ul>
+            <li><%= link_to 'フレンド一覧', friends_index_path %></li>
+            <li><%= link_to 'フレンド検索', friends_search_path %></li>
+          </ul>
+        </li>
+        <li><a>プロフィール</a>
+          <ul>
+            <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+          </ul>
+        </li>
+        <li><a>tips</a>
+          <ul>
+            <li><%= link_to 'Markdownとは？', tips_index_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="note-search-form">
+  	<%= form_tag friends_search_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
+  	<p class = "friends-sentence">フレンドの名前を入力してください．</p>
+    <%= text_field_tag :search, params[:search], :autocomplete => :off, class:"note-search-field", placeholder:"フレンドを検索" %>
+    <%= submit_tag "友達になる",class:"note-search-btn", :name => nil %>
+	<% end %>
+  </div>
+
+  <div class = "friends-search-list">
+
+      <div class = "friends-search-result"></div>
+
+      <script type="text/javascript">
+        $('.note-search-btn').click(function(){
+            document.getElementsByClassName('friends-search-result').innerHTML = "<p>該当する名前のuserが存在しませんでした．</p>";
+      });
+      </script>
+	  <% if params[:search].present? %>
+      <% @users.each do |user| %>
+      <p><%= user.user_name %>さんと友達になりました．</p>
+      <div style = "display:none">
+        <%= Friendship.create(:from_user_id => current_user.id,
+          :to_user_id => user.id) %>
+      </div>
+      <% end %>
+  	<% else %>
+      
+
+    	<!-- 何も表示しない -->
+  	<% end %>
+  </div>
+
+  <div id="footer">
+    <p><small>
+      Copyright&copy; 2015 @Daiki Ito, Yuji Koketsu All Rights Reserved.</small></p>
+  </div>

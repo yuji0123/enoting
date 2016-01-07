@@ -5,14 +5,16 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.order("updated_at DESC")
+    # @notes = Note.order("updated_at DESC")
+    # @notes = Note.all.reverse_order
     # @notes = Note.all
+    @notes = Note.where( 'user_id' => current_user.id ).reverse_order
   end
 
   # GET /notes/1
   # GET /notes/1.json
   def show
-    gon.text_list = @note.contents  
+    gon.text_list = @note.contents    
   end
 
   # GET /notes/new
@@ -22,13 +24,20 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
-    gon.editText = @note.contents
+  end
+
+  def search
+    # @notes = Note.scoped
+    @notes = Note.where(['name LIKE ? or contents LIKE ?', 
+      "%#{params[:search]}%","%#{params[:search]}%"]).reverse_order if
+      params[:search].present?
   end
 
   # POST /notes
   # POST /notes.json
   def create
     @note = Note.new(note_params)
+    @note.user_id = current_user.id
 
     respond_to do |format|
       if @note.save

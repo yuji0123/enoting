@@ -14,6 +14,11 @@
       <%= devise_error_messages! %>
 
       <!-- メールアドレス登録フォーム -->
+      <div class="nickname-form">
+        <%= f.label :nickname %><br />
+        <%= f.text_field :user_name, autofocus: false, id: "nickname", class: "text_form" %>
+      </div>
+
       <div class="mailaddress-form">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, id: "mail_address", class: "text_form" %>

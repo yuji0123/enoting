@@ -16,16 +16,18 @@ $(function() {
     });
 });
 
-$(window).load(function() {
+
+$(document).ready(function() {
     marked.setOptions({
         langPrefix: ''
     });
 
     var src = $('.edit-note-text').val();
-    console.log("%s",src);
+    // console.log("%s",src);
     var html = marked(src);
 
     $('#result').html(html);
+
 });
 
 // $(document).on('pagecontainerload',function() {
