@@ -53,6 +53,15 @@
 			<%= link_to 'Back', notes_path, class:"show-to-btn" %>
 		</div>
 	</div>
+    
+    <%= form_for(@note) do |f| %>
+    <div class = "edit-form" style="display:none">
+      <div class="edit-text-form">
+      <%= f.text_area :contents, class: "edit-note-text", size: "60x20" %>
+      <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
+      </div>
+    </div>  
+    <% end %>
 
  	<div id="footer">
 		<p><small>
