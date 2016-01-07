@@ -8,5 +8,12 @@ class User < ActiveRecord::Base
   has_many :friends_of_to_user, :through => :friendships_of_to_user, :source => 'from_user'
   devise :database_authenticatable, :registerable,:recoverable, :rememberable, :trackable, :validatable
 
+
+  has_many :shares
+  has_many :notes, :through => :shares
+  def friends
+     friends_of_from_user.uniq + friends_of_to_user.uniq
+  end
+
   validates :user_name, presence: true, length: { maximum: 50 }
 end

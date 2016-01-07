@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_note, only: [:share, :show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
   # GET /notes
@@ -11,10 +11,11 @@ class NotesController < ApplicationController
     @notes = Note.where( 'user_id' => current_user.id ).reverse_order
   end
 
+
   # GET /notes/1
   # GET /notes/1.json
   def show
-    gon.text_list = @note.contents    
+    gon.text_list = @note.contents
   end
 
   # GET /notes/new
@@ -24,6 +25,9 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
+  end
+
+  def share
   end
 
   def search

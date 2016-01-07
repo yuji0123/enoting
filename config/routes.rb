@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'share/note/:id' => "notes#share"
+  # get 'share/index'
+
   get 'friends/search'
 
   get 'friends/index'
