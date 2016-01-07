@@ -920,7 +920,7 @@ body{
 }
 
 .note-search-btn{
-	margin-left: 20px;
+	margin: 20px auto;
 	font-size: 15px;
 	padding: 14px 30px;
 	border: solid 2px #ccc;
