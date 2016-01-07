@@ -34,6 +34,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.timestamps null: false
     end
 
+    execute "ALTER TABLE users ADD PRIMARY KEY (user_name);"
+
     # create_table :notes do |t|
     #   t.belongs_to :user
 

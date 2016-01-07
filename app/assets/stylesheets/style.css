@@ -980,6 +980,35 @@ body{
 	font-size: 19px;
 }
 
+/* tips.html.erb ここまで　*/
+
+/* friend-index.html.erb ここから */
+.friend-width{
+	width: 1000px;
+	margin: 20px auto;
+}
+
+.friend-width .my-nickname{
+	margin-bottom: 40px;
+}
+
+.friend-width .my-nickname h2{
+	font-size: 22px;
+}
+
+.friend-width .my-friend-list h2{
+	font-size: 18px;
+}
+
+.friend-width .my-friend-list p{
+	font-size: 14px;
+}
+
+.note-search-form .friends-sentence{
+	font-size: 16px;
+	margin-left: 45px;
+	margin-bottom: 20px;
+}
 
 /* フッター */
 #footer{

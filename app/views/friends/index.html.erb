@@ -19,8 +19,8 @@
         </li>
         <li><a>フレンド</a>
           <ul>
-            <li><%= link_to 'フレンド一覧', notes_path %></li>
-            <li><%= link_to 'フレンド検索', notes_path %></li>
+            <li><%= link_to 'フレンド一覧', friends_index_path %></li>
+            <li><%= link_to 'フレンド検索', friends_search_path %></li>
           </ul>
         </li>
         <li><a>プロフィール</a>
@@ -46,21 +46,18 @@
     </div>
   </div>
  -->
+ <div class = "friend-width">
+  <div class = "my-nickname">
+    <h2>あなたの名前 : <%= @user.user_name %></h2>
+  </div>
 
- <p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
- 
-</p>
-  <p><strong>あなたが申請元である友達関係</strong></p>
-  <% @friends_of_from_user.each do |friend| %>
-    <div><%= friend.email %></div>
-  <% end %>
-  <p><strong>あなたが申請先である友達関係</strong></p>
-  <% @friends_of_to_user.each do |friend| %>
-    <div><%= friend.email %></div>
-  <% end %>
-
+  <div class = "my-friend-list">
+    <h2>フレンド一覧</h2>
+    <% @friends_of_from_user.each do |friend| %>
+    <p><%= friend.user_name %></p>
+    <% end %>
+  </div>
+ </div>
 
 
   <div id="footer">

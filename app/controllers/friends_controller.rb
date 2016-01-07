@@ -6,5 +6,6 @@ class FriendsController < ApplicationController
   end
 
   def search
+  	@users = User.where( 'user_name' => "#{params[:search]}" ).uniq if params[:search].present?	
   end
 end
