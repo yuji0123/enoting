@@ -33,9 +33,6 @@ test:
 
 production:
   encoding: utf8  
-  adapter: postgresql  
-  port: 5432  
-  username: a
-  host: your_host
+  adapter: postgresql
   database: your_database
   password: your_password
