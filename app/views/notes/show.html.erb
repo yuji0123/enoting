@@ -52,7 +52,7 @@
 		<div id="viewer"></div>
 
 		<div class = "show-list-btn">
-			<%= link_to 'Edit', {action: 'share'}, id: "note.id", class:"show-to-btn" %>
+			<%= link_to 'Edit', edit_note_path(note) , class:"show-to-btn"%>
 			<%= link_to 'Back', notes_path, class:"show-to-btn" %>
 		</div>
 	</div>
