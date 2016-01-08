@@ -34,5 +34,7 @@ test:
 production:
   encoding: utf8  
   adapter: postgresql
-  database: your_database
-  password: your_password
+  database: enoting_pro
+  host: localhost
+  password: 
+  pool: 15
